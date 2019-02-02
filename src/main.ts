@@ -9,7 +9,7 @@ export const loop = ErrorMapper.wrapLoop(() => {
   /*
   * The code below handles the spawning of Creeps
   */
-  const populationSize = Object.keys(Game.creeps).length // TODO
+  const populationSize = Object.keys(Game.creeps).length;
   const desiredPopulationSize = 5;
 
   if (populationSize < desiredPopulationSize) {

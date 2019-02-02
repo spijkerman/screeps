@@ -18,6 +18,12 @@ export class RoleHarvester {
                 }
             } else {
                 const controller = creep.room.controller;
+                // CONTINUE HERE
+                /*
+                * Since the creep first checks if he is carrying the max amount of energy,
+                * after one upgrade cycle the miner will revert to mining,
+                * so upgrading is pretty slow
+                */
                 // Make sure that the room has a controller (needed for TS)
                 if (controller != undefined && creep.upgradeController(controller) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(controller);
