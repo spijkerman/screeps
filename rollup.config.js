@@ -5,6 +5,7 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import screeps from "rollup-plugin-screeps";
+import execute from "rollup-plugin-execute";
 
 let cfg;
 const dest = process.env.DEST;
@@ -26,7 +27,8 @@ export default {
     clear({ targets: ["dist"] }),
     resolve(),
     commonjs(),
-    typescript({tsconfig: "./tsconfig.json"}),
-    screeps({config: cfg, dryRun: cfg == null})
+    typescript({ tsconfig: "./tsconfig.json" }),
+    screeps({ config: cfg, dryRun: cfg == null }),
+    execute('copy .\\dist\\* C:\\Users\\Ivo\\AppData\\Local\\Screeps\\scripts\\127_0_0_1___21025\\default\\')
   ]
 }
